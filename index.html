@@ -9,95 +9,131 @@
   </head>
 
   <body>
-    <header class="container">
-      <div class="logo">
-        <img
-          src="project-assets/logos/circle.svg"
-          alt="logo"
-          class="circle-logo"
-        />
+    <header>
+      <div class="container split">
+        <div class="logo">
+          <img
+            src="project-assets/logos/circle.svg"
+            alt="logo"
+            class="circle-logo"
+          />
+        </div>
+        <nav class="primary-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+        </nav>
+        <button class="btn">Contact Us</button>
       </div>
-      <nav class="primary-nav">
-        <ul>
-          <li>Home</li>
-          <li>Projects</li>
-          <li>Services</li>
-        </ul>
-      </nav>
-      <button class="btn">Contact Us</button>
     </header>
 
     <main>
       <section class="hero-section">
         <div class="container">
-          <div class="hero-content">
+          <div class="hero-content split">
             <h1>Empower Your Business With Stunning Design!</h1>
             <p>
               Circle is a digital design and development studio. We design and
               develop astonishing websites and mobile apps.
             </p>
-            <button class="btn">Get in touch</button>
-            <a class="link" href=""><p>See our work</p> </a>
+            <div class="links-group">
+              <button class="btn">Get in touch</button>
+              <a class="link" href="">See our work</a>
+            </div>
           </div>
           <div class="hero-image">
             <img
               src="project-assets/hero-section/hero-image.png"
               alt="hero-image"
             />
-            <div class="hero-card1">
-              <img
-                src="project-assets/hero-section/card-1.png"
-                alt="hero-card1"
-              />
-            </div>
-            <div class="hero-card2">
-              <img
-                src="project-assets/hero-section/card-2.png"
-                alt="hero-card2"
-              />
-            </div>
+
+            <img
+              src="project-assets/hero-section/card-1.png"
+              alt="hero-card1"
+              class="card hero-card1"
+            />
+
+            <img
+              src="project-assets/hero-section/card-2.png"
+              alt="hero-card2"
+              class="card hero-card2"
+            />
           </div>
         </div>
       </section>
 
       <section class="client-section">
         <div class="container">
-          <img src="project-assets/logos/airbnb-logo.svg" alt="airbnb-logo" />
-        </div>
-        <div>
-          <img src="project-assets/logos/google-logo.svg" alt="google-logo" />
-        </div>
-        <div>
           <img
+            class="client-img"
+            src="project-assets/logos/airbnb-logo.svg"
+            alt="airbnb-logo"
+          />
+          <img
+            class="client-img"
+            src="project-assets/logos/google-logo.svg"
+            alt="google-logo"
+          />
+          <img
+            class="client-img"
             src="project-assets/logos/microsoft-logo.svg"
             alt="microsoft-logo"
           />
-        </div>
-        <div>
-          <img src="project-assets/logos/fedex-logo.svg" alt="fedex-logo" />
-        </div>
-        <div>
-          <img src="project-assets/logos/amazon-logo.svg" alt="amazon-logo" />
+          <img
+            class="client-img"
+            src="project-assets/logos/fedex-logo.svg"
+            alt="fedex-logo"
+          />
+          <img
+            class="client-img"
+            src="project-assets/logos/amazon-logo.svg"
+            alt="amazon-logo"
+          />
         </div>
       </section>
 
       <section class="projects-section">
-        <div class="container">
+        <div class="grid-container">
           <h3>Recent Projects</h3>
-          <div class="projects-card">
-            <h4 class="body-24"></h4>
-            <p class="regular-17"></p>
-            <a href="" class="learn-more-link"></a>
-          </div>
-          <div class="projects-card">
-            <h4 class="body-24"></h4>
-            <p class="regular-17"></p>
-            <a href="" class="learn-more-link"></a>
-          </div>
-          <div class="projects-card">
-            <h4 class="body-24"></h4>
-            <p class="regular-17"></p>
-            <a href="" class="learn-more-link"></a>
+          <div class="grid-group">
+            <article class="projects-card">
+              <img
+                src="/project-assets/projects-section/1.jpg"
+                alt=""
+                class="projects-card__img"
+              />
+              <div class="projects-card__content">
+                  <h4>Simplify</h4>
+                  <p>UI Design & App Development</p>
+                  <a href="#" class="learn-more-link">Learn more</a>
+              </div>
+            </article>
+            <article class="projects-card">
+              <img
+                src="/project-assets/projects-section/2.jpg"
+                alt=""
+                class="projects-card__img"
+              />
+              <div class="projects-card__content">
+                  <h4>Dashcoin</h4>
+                  <p>Web Development</p>
+                  <a href="#" class="learn-more-link">Learn more</a>
+              </div>
+            </article>
+            <article class="projects-card">
+              <img
+                src="/project-assets/projects-section/3.jpg"
+                alt=""
+                class="projects-card__img"
+              />
+              <div class="projects-card__content">
+                  <h4>Vectorify</h4>
+                  <p>User Experience Design</p>
+                  <a href="#" class="learn-more-link">Learn more</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -177,7 +213,7 @@
       <section class="cta-section">
         <div class="container">
           <h3>Do you have any questions?</h3>
-          <p class="regular-17">Let us help you!</p>
+          <p>Let us help you!</p>
           <input
             type="text"
             id="email"
@@ -195,9 +231,7 @@
       <div class="container">
         <div class="logo">
           <img src="project-assets/logos/circle.svg" alt="circle-logo" />
-          <p class="regular-17">
-            2972 Westheimer Rd. Santa Ana, Illinois 85486
-          </p>
+          <p>2972 Westheimer Rd. Santa Ana, Illinois 85486</p>
         </div>
         <nav class="secondary-nav">
           <ul>
