@@ -303,9 +303,8 @@ link:focus {
 
 .grid-container {
   display: grid;
-  width: 77%;
+  width: min(90rem, 77%);
   margin: 0 auto;
-  /* grid-template-columns: repeat(3, minmax(300px, 1fr)); */
   justify-content: space-between;
   align-items: center;
 }
@@ -417,7 +416,7 @@ link:focus {
 }
 
 .testimonial-section .container {
-  width: 90%;
+  width: max(90rem, 85%);
   background: url("../project-assets/");
   background-size: cover;
   padding-block: 4rem;
@@ -440,7 +439,7 @@ link:focus {
 }
 
 .testimonial-section .container {
-  width: 85%;
+  width: min(100rem, 85%);
   background-color: var(--clr-neutral-dark);
   background-image: url("../project-assets/testimonial-section/orbit.png");
   background-size: cover;
@@ -571,7 +570,7 @@ link:focus {
 }
 
 .cta-section .container {
-  width: 85%;
+  width: min(100rem, 85%);
   height: 30rem;
   background-color: var(--clr-secondary);
   padding-block: 1rem;
@@ -703,7 +702,10 @@ footer {
 }
 
 @media (max-width: 928px) {
-  .container {
+  .container,
+  .grid-container,
+  .testimonial-section .container,
+  .cta-section .container {
     width: 90%;
   }
 
