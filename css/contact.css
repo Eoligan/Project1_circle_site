@@ -1,0 +1,308 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a:visited,
+a:active {
+  color: none;
+  background-color: transparent;
+}
+
+:root {
+  --font-family: "Roboto", sans-serif;
+
+  --fs-100-caption2--13r: 0.8125rem;
+  --fs-200-caption1--15r: 0.9375rem;
+  --fs-300-headline--17rm: 1.0625rem;
+  --fs-400-body--20r: 1.25rem;
+  --fs-500-body-h4--24mb: 1.5rem;
+  --fs-700-h3--40b: 2.5rem;
+  --fs-800-h2--50b: 3.125rem;
+  --fs-900-h1--60b: 3.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --clr-primary-tapped: #d1edff;
+  --clr-primary-hover: #a2d6f9;
+  --clr-primary-accent: #43d2ff;
+  --clr-primary-default: #082cc9;
+
+  --clr-neutral-lightblue: #ecf7ff;
+  --clr-neutral-light: #f2f4fc;
+  --clr-neutral-medium: #6b708d;
+  --clr-neutral-dark: #292e47;
+
+  --clr-secondary: #ffc600;
+}
+
+html {
+  font-size: 80%;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--clr-neutral-medium);
+  background-color: var(--clr-neutral-light, #f4f6fc);
+  font-size: var(--fs-400-body--20r);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--fs-900-h1--60b);
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  font-size: var(--fs-800-h2--50b);
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  font-size: var(--fs-700-h3--40b);
+  font-weight: var(--fw-bold);
+}
+
+h4 {
+  font-size: var(--fs-500-body-h4--24mb);
+  font-weight: var(--fw-bold);
+}
+
+.container {
+  width: min(90rem, 77%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.split > * + * {
+  margin: 3rem 0 0 0;
+}
+
+.link {
+  text-decoration: none;
+  font-size: var(--fs-300-headline--17rm);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-medium);
+}
+
+.link:hover,
+link:focus {
+  text-decoration: underline;
+}
+
+.learn-more-link {
+  position: absolute;
+  font-weight: var(--fw-regular);
+  color: var(--clr-primary-default);
+  font-size: var(--fs-300-headline--17rm);
+  text-decoration: none;
+  bottom: 1rem;
+}
+
+.learn-more-link:hover {
+  text-decoration: underline;
+}
+
+header > .container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  margin-top: 3rem;
+}
+
+.btn {
+  color: var(--clr-primary-tapped);
+  background: var(--clr-primary-default);
+  text-align: center;
+  font-size: var(--fs-300-headline--17rm);
+  padding: 0.8rem 1.7rem;
+  font-weight: var(--fw-medium);
+  border: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn:hover {
+  background: hsla(229, 92%, 25%);
+  color: var(--clr-primary-accent);
+}
+
+.primary-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: var(--fs-300-headline--17rm);
+  font-weight: var(--fw-medium);
+}
+
+.primary-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 4rem;
+}
+.primary-nav li {
+  position: relative;
+  cursor: pointer;
+}
+.primary-nav a {
+  text-decoration: none;
+  color: var(--clr-neutral-medium);
+}
+
+.primary-nav li:hover {
+  text-shadow: 1px 0px 0px var(--clr-neutral-medium);
+}
+
+.primary-nav li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background-color: var(--clr-primary-default);
+  border-radius: 3px;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.primary-nav li:hover::before {
+  transform: scaleX(1);
+}
+
+
+footer {
+    margin-block: 6rem;
+  }
+  
+  footer .container {
+    justify-content: space-between;
+    row-gap: 3rem;
+  }
+  
+  footer .logo img {
+    margin-block-end: 2rem;
+  }
+  
+  .logo p {
+    color: var(--clr-neutral-medium);
+    font-size: var(--fs-300-headline--17rm);
+    font-weight: var(--fw-regular);
+  }
+  
+  .secondary-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs-300-headline--17rm);
+    font-weight: var(--fw-regular);
+    width: 27rem;
+  }
+  
+  .secondary-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    column-gap: 6rem;
+    row-gap: 3rem;
+  }
+  
+  .secondary-nav li {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .secondary-nav a {
+    text-decoration: none;
+    color: var(--clr-neutral-medium);
+  }
+  
+  .secondary-nav a:hover {
+    text-decoration: underline;
+  }
+
+  
+  @media (max-width: 928px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+
+    
+  
+    
+
+  
