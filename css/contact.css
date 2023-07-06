@@ -252,7 +252,7 @@ header .logo {
 .contact-header {
   color: var(--clr-neutral-dark);
   font-size: clamp(3rem, 4vw, var(--fs-900-h1--60b));
-  padding-block: 3rem;
+  padding-block: 4rem;
 }
 
 .contact-form {
