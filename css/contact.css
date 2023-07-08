@@ -310,9 +310,14 @@ header .logo {
   margin-left: 3rem;
 }
 
-.form-couple > * {
+.form-couple > *,
+.form-couple input {
   display: block;
   width: 100%;
+}
+
+#email-container input:focus {
+  outline: none;
 }
 
 .form-group.inline-labels label {
@@ -321,6 +326,24 @@ header .logo {
 
 .btn[type="submit"] {
   width: 100%;
+}
+
+.invalid {
+  position: relative;
+}
+
+.invalid:focus-within {
+  outline: 2px solid rgb(232, 37, 37);
+  border-radius: 2px;
+}
+
+.invalid::after {
+  content: "Invalid email";
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  color: rgb(232, 37, 37);
+  border: none;
 }
 
 footer {
