@@ -64,7 +64,7 @@ h6 {
 a:visited,
 a:active {
   color: none;
-  background-color: transparent;
+  background-color: none;
 }
 
 :root {
@@ -178,7 +178,7 @@ header .logo {
 
 .btn {
   color: var(--clr-primary-tapped);
-  background: var(--clr-primary-default);
+  background-color: var(--clr-primary-default);
   text-align: center;
   font-size: var(--fs-300-headline--17rm);
   padding: 0.8rem 1.7rem;
@@ -188,12 +188,11 @@ header .logo {
   letter-spacing: 1px;
   flex-shrink: 0;
   cursor: pointer;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 .btn:hover {
-  background: hsla(229, 92%, 25%);
-  color: var(--clr-primary-accent);
+  background-color: hsla(229, 92%, 25%);
 }
 
 .primary-nav {
@@ -220,8 +219,12 @@ header .logo {
   color: var(--clr-neutral-medium);
 }
 
+.primary-nav a:hover {
+  color: var(--clr-primary-default);
+}
+
 .primary-nav li:hover {
-  text-shadow: 1px 0px 0px var(--clr-neutral-medium);
+  text-shadow: 1px 0px 0px var(--clr-primary-default);
 }
 
 .primary-nav li::before {
