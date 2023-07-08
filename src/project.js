@@ -23,14 +23,11 @@ async function getArticle() {
     let item;
 
     for (const i in data) {
-      console.log(data[i], " a ver ahora con .name = ", data[i].name);
       if (data[i].name.toLowerCase() === selectedLinkID) {
         item = i;
         break;
       }
     }
-
-    console.log(item);
 
     // Crear el elemento div para el encabezado del proyecto
     const headerDiv = document.createElement("div");

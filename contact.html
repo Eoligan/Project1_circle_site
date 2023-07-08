@@ -34,16 +34,18 @@
         <div class="container">
           <h1 class="contact-header">Contact Us</h1>
           <div class="contact-form">
-            <form class="split" action="/" method="get">
+            <form class="split" action="/" method="get" novalidate>
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  placeholder="Enter your full name"
-                  required
-                />
+                <div id="fullname-container">
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
               </div>
 
               <div class="form-group inline-labels">

@@ -281,6 +281,7 @@ header .logo {
   background-color: hsla(231, 14%, 49%, 0.1);
   height: 4.3rem;
   padding-inline-start: 2rem;
+  width: 100%;
 }
 
 .form-group textarea {
@@ -320,6 +321,10 @@ header .logo {
   outline: none;
 }
 
+#fullname-container input:focus {
+  outline: none;
+}
+
 .form-group.inline-labels label {
   margin-right: 10px;
 }
@@ -338,12 +343,11 @@ header .logo {
 }
 
 .invalid::after {
-  content: "Invalid email";
+  content: "Invalid field";
   position: absolute;
   bottom: -2rem;
   left: 0;
   color: rgb(232, 37, 37);
-  border: none;
 }
 
 footer {
