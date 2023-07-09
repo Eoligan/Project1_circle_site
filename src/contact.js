@@ -1,12 +1,11 @@
-const form = document.querySelector("form");
+const myForm = document.getElementById("contact-form-id");
 
 function validateEmail(input) {
   var validRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return validRegex.test(input);
 }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+myForm.addEventListener("submit", (event) => {
   const inputEmail = document.getElementById("email");
   const emailContainer = document.getElementById("email-container");
   const inputFullName = document.getElementById("fullName");
@@ -19,6 +18,7 @@ form.addEventListener("submit", (event) => {
     console.log("No valid");
     emailContainer.classList.add("invalid");
     inputEmail.focus();
+    event.preventDefault();
   }
 
   if (!inputFullName.value) {
@@ -27,10 +27,6 @@ form.addEventListener("submit", (event) => {
     fullNameContainer.classList.add("invalid");
     inputFullName.focus();
   }
-
-  //   if (isValid && inputFullName.value) {
-  //     form.submit();
-  //   }
 
   inputEmail.addEventListener("input", () => {
     if (emailContainer.classList.contains("invalid")) {
@@ -42,4 +38,8 @@ form.addEventListener("submit", (event) => {
       fullNameContainer.classList.remove("invalid");
     }
   });
+
+  if (isValid && inputFullName.value) {
+    myForm.submit();
+  }
 });

@@ -317,14 +317,6 @@ header .logo {
   width: 100%;
 }
 
-#email-container input:focus {
-  outline: none;
-}
-
-#fullname-container input:focus {
-  outline: none;
-}
-
 .form-group.inline-labels label {
   margin-right: 10px;
 }
@@ -340,6 +332,11 @@ header .logo {
 .invalid:focus-within {
   outline: 2px solid rgb(232, 37, 37);
   border-radius: 2px;
+}
+
+#fullname-container.invalid input:focus,
+#email-container.invalid input:focus {
+  outline: none;
 }
 
 .invalid::after {
