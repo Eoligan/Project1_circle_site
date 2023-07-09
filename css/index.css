@@ -20,6 +20,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 /*
     5. Improve media defaults
@@ -242,6 +243,107 @@ header .logo {
 
 .primary-nav li:hover::before {
   transform: scaleX(1);
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .primary-nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    inset: -3rem 0 0 30%;
+    background-color: hsla(230, 27%, 22%, 0.95);
+    z-index: 800;
+    padding: 10rem 4em;
+    transform: translateX(100%);
+    transition: transform 350ms ease-in-out;
+  }
+
+  .primary-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .primary-nav + .btn {
+    display: block;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    z-index: 900;
+    width: 50%;
+    font-size: var(--fs-400-body--20r);
+    padding-block: 1.5rem;
+    transform: translateX(150%);
+    transition: transform 350ms ease-in-out;
+  }
+
+  .primary-nav[data-visible="true"] + .btn {
+    transform: translateX(0%);
+  }
+
+  .primary-nav ul {
+    flex-direction: column;
+  }
+
+  .primary-nav a {
+    color: var(--clr-neutral-light);
+  }
+
+  .mobile-nav-toggle {
+    position: absolute;
+    display: block;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    top: -0.5rem;
+    right: 3rem;
+    z-index: 9999;
+    mask-image: url("/project-assets/nav/menu-open.svg");
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-position: center;
+    background-color: black;
+    border: none;
+    -webkit-mask-image: url("/project-assets/nav/menu-open.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+  }
+
+  .mobile-nav-toggle[data-toggle-icon="true"] {
+    mask-image: url("/project-assets/nav/menu-close.svg");
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-position: center;
+    background-color: white;
+    -webkit-mask-image: url("/project-assets/nav/menu-close.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: center;
+  }
+
+  .disable-animation * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@supports (backdrop-filter: blur(4rem)) {
+  @media (max-width: 500px) {
+    .primary-nav {
+      background-color: hsla(230, 27%, 22%, 0.5);
+      font-size: var(--fs-500-body-h4--24mb);
+    }
+    .primary-nav::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(2rem);
+      z-index: -1;
+    }
+  }
 }
 
 .hero-section {
